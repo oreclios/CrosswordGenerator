@@ -499,11 +499,9 @@ public class Grid {
 				break;
 			else {
 				wordList.wordList.get(i).found=0;
-				this.forbWords.get(i).add(wordList.wordList.get(i).value);
 				wordList.wordList.get(i).setValue("");
 				for(int j=0; j<wordsIdx.size(); j++) {
 					wordList.wordList.get(wordsIdx.get(j)).found=0;
-					this.forbWords.get(wordsIdx.get(j)).add(wordList.wordList.get(wordsIdx.get(j)).value);
 					wordList.wordList.get(wordsIdx.get(j)).setValue("");
 					wordsIdx.clear();
 				}
@@ -516,6 +514,13 @@ public class Grid {
 			wordList.wordList.get(i).found=0;
 			
 			if(n>=0) {
+				
+				/*Comprobamos que la palabra actual se cruza con la anterior formada:*/
+				if(cross(wordList, i, n) != 0) {
+					/*Establecemos la palabra anterior como una de las que cruza a las actuales:*/
+					n = getPrevWord(wordList, i);
+				}
+				
 				wordList.wordList.get(n).found=0;
 				this.forbWords.get(n).add(wordList.wordList.get(n).value);
 				wordList.wordList.get(n).setValue("");
@@ -544,7 +549,7 @@ public class Grid {
 		
 	}
 	
-	public int getNextWord(WordList wordList, int last) {
+	public int getNextWord(WordList wordList, int last) throws IOException {
 		
 		/*int n;
 		int count2=0;
@@ -563,6 +568,27 @@ public class Grid {
 		return n;*/
 		
 		return this.validWord(wordList,last);
+	}
+	
+public int getPrevWord(WordList wordList, int last) throws IOException {
+		
+		/*int n;
+		int count2=0;
+		int found;
+		
+		do {
+			found=0;
+			n = ThreadLocalRandom.current().nextInt(0, this.nwords);
+			count2++;
+			if(wordList.wordList.get(n).found==0) {
+				if(this.validWord(wordList,n,last) != -1 || count2 > this.nwords)
+					found=1;
+			}
+		}while(found!=1);
+		
+		return n;*/
+		
+		return this.validPrevWord(wordList,last);
 	}
 	
 	public WordList getValidWords(WordList wordList, int i) throws IOException {
@@ -640,10 +666,10 @@ public class Grid {
 				
 		//System.out.printf("palabra prueba: %s \n", wordList.wordList.get(i).value);
 		
-		/*System.out.printf("Palabra prueba: %s\n", nword);
+		System.out.printf("Palabra prueba: %s\n", nword);
 		System.out.printf("Palabra: %s\n", wordList.wordList.get(i).getValue());
 		System.out.printf("Posicion: (%d, %d)\n", wordList.wordList.get(i).row, wordList.wordList.get(i).col);
-		System.out.printf("Longitud: %d\n", wordList.wordList.get(i).length);*/
+		System.out.printf("Longitud: %d\n", wordList.wordList.get(i).length);
 				
 		/*ACTUALIZAMOS EL GRID:*/
 		/*Si es HORIZONTAL:*/
@@ -980,7 +1006,7 @@ public class Grid {
 		
 	}
 	
-	public int validWord(WordList wordList, int last) {
+	public int validWord(WordList wordList, int last) throws IOException {
 	
 		int found = 0;
 		int cross = 0;
@@ -1081,6 +1107,7 @@ public class Grid {
 		/*Obtenemos una palabra aleatoria de las que cruzan:*/
 		if(cwords.size() > 0) {
 			//int index = ThreadLocalRandom.current().nextInt(0, cwords.size());
+			int index = selectWord(wordList, cwords);
 			return cwords.get(0).intValue();
 		}
 		else {
@@ -1117,6 +1144,229 @@ public class Grid {
 		return 1;
 		
 		*/
+	}
+	
+	public int cross(WordList wordList, int current, int last) {
+		
+		/*Comprobamos que la palabra cruza a la palabra actual:*/
+		
+		/*Formamos un grid con solo la anterior palabra:*/
+		Grid gridaux = new Grid(this.nrows, this.ncols);
+		for(int i=0; i<gridaux.nrows; i++) {
+			for(int j=0; j<gridaux.ncols; j++) {
+				gridaux.gridv[i][j]="0";
+			}
+		}
+		/*Añadimos la ultima palabra:*/
+		int xxi = wordList.wordList.get(current).row;
+		int yyi = wordList.wordList.get(current).col;
+		int lengthaux = wordList.wordList.get(current).length;
+		int colaux = wordList.wordList.get(current).col;
+		int rowaux = wordList.wordList.get(current).row;
+		/*Si la palabra es HORIZONTAL*/
+		if(wordList.wordList.get(current).pos == 0) {
+			
+			for(int i=yyi; i<yyi+lengthaux; i++) {
+				gridaux.gridv[rowaux][i] = "1";
+			}
+			
+		}
+		/*Si la palabra es VERTICAL*/
+		else if(wordList.wordList.get(current).pos == 1) {
+			
+			for(int i=xxi; i<xxi+lengthaux; i++) {
+				gridaux.gridv[i][colaux] = "1";
+			}
+			
+		}
+		
+		/*Comprobamos si las palabras se cruzan:*/
+		List<Integer> cwords = new ArrayList<Integer>();
+		List<Integer> ncwords = new ArrayList<Integer>();
+
+		/*Si la palabra es horizontal:*/
+		if(wordList.wordList.get(last).pos==0) {
+			int row = wordList.wordList.get(last).row;
+			int yi = wordList.wordList.get(last).col;
+			int length = wordList.wordList.get(last).length;
+					
+			for(int j=yi; j<yi+length; j++) {
+				if(gridaux.gridv[row][j]=="1") {
+					return 0;
+				}
+			}			
+		}
+				
+		/*Si la palabra es vertical:*/
+		else if(wordList.wordList.get(last).pos==1) {
+			int col = wordList.wordList.get(last).col;
+			int xi = wordList.wordList.get(last).row;
+			int length = wordList.wordList.get(last).length;
+					
+			for(int j=xi; j<xi+length; j++) {
+				if(gridaux.gridv[j][col]=="1") {
+					return 0;
+				}
+			}
+					
+		}
+		
+		return 1;
+	}
+	
+	public int validPrevWord(WordList wordList, int last) throws IOException {
+		
+		int found = 0;
+		int cross = 0;
+		
+		/*Comprobamos que la palabra cruza a la palabra actual:*/
+		
+		/*Formamos un grid con solo la anterior palabra:*/
+		Grid gridaux = new Grid(this.nrows, this.ncols);
+		for(int i=0; i<gridaux.nrows; i++) {
+			for(int j=0; j<gridaux.ncols; j++) {
+				gridaux.gridv[i][j]="1";
+			}
+		}
+		/*Añadimos la ultima palabra:*/
+		int xxi = wordList.wordList.get(last).row;
+		int yyi = wordList.wordList.get(last).col;
+		int lengthaux = wordList.wordList.get(last).length;
+		int colaux = wordList.wordList.get(last).col;
+		int rowaux = wordList.wordList.get(last).row;
+		/*Si la palabra es HORIZONTAL*/
+		if(wordList.wordList.get(last).pos == 0) {
+			
+			for(int i=yyi; i<yyi+lengthaux; i++) {
+				gridaux.gridv[rowaux][i] = 
+						String.valueOf(wordList.wordList.get(last).getValue().charAt(i-yyi));
+			}
+			
+		}
+		/*Si la palabra es VERTICAL*/
+		else if(wordList.wordList.get(last).pos == 1) {
+			
+			for(int i=xxi; i<xxi+lengthaux; i++) {
+				gridaux.gridv[i][colaux] = 
+						String.valueOf(wordList.wordList.get(last).getValue().charAt(i-xxi));
+			}
+			
+		}
+		
+		/*Identificamos las palabras establecidas que cruzan a la ultima formada:*/
+		List<Integer> cwords = new ArrayList<Integer>();
+		List<Integer> ncwords = new ArrayList<Integer>();
+		
+		for(int i=0; i<this.nwords; i++) {
+			if(wordList.wordList.get(i).found==1) {
+				cross=0;
+				/*Si la palabra es horizontal:*/
+				if(wordList.wordList.get(i).pos==0) {
+					int row = wordList.wordList.get(i).row;
+					int yi = wordList.wordList.get(i).col;
+					int length = wordList.wordList.get(i).length;
+					
+					for(int j=yi; j<yi+length; j++) {
+						if(gridaux.gridv[row][j]!="1") {
+							cross=1;
+							cwords.add(i);
+							break;
+						}
+					}
+					
+					if(cross==0)
+						ncwords.add(i);
+					
+				}
+				
+				/*Si la palabra es vertical:*/
+				else if(wordList.wordList.get(i).pos==1) {
+					int col = wordList.wordList.get(i).col;
+					int xi = wordList.wordList.get(i).row;
+					int length = wordList.wordList.get(i).length;
+					
+					for(int j=xi; j<xi+length; j++) {
+						if(gridaux.gridv[j][col]!="1") {
+							cross=1;
+							cwords.add(i);
+							break;
+						}
+					}
+					
+					if(cross==0)
+						ncwords.add(i);
+					
+				}
+			}
+		}
+		
+		/*Obtenemos una palabra aleatoria de las que cruzan:*/
+		if(cwords.size() > 0) {
+			//int index = ThreadLocalRandom.current().nextInt(0, cwords.size());
+			int index = selectWord(wordList, cwords);
+			return cwords.get(0).intValue();
+		}
+		else {
+			int index = ThreadLocalRandom.current().nextInt(0, ncwords.size());
+			return ncwords.get(index).intValue();
+		}
+		
+	}
+	
+	public int selectWord(WordList wordList, List<Integer> cwords) throws IOException {
+		
+		int index = 0;
+		
+		int npos = 10^6;
+		char[] constrs;
+		String constraints;
+		
+		/*Comprobamos palabra a palabra:*/
+		for(int i=0; i<cwords.size(); i++) {
+			/*Obtenemos las constraints:*/
+			constrs = new char[wordList.wordList.get(cwords.get(i)).length];
+			
+			int xi = wordList.wordList.get(cwords.get(i)).row;
+			int yi = wordList.wordList.get(cwords.get(i)).col;
+			int length = wordList.wordList.get(cwords.get(i)).length;
+			int col = wordList.wordList.get(cwords.get(i)).col;
+			int row = wordList.wordList.get(cwords.get(i)).row;
+			
+			/*Obtenemos las posiciones que ocupa la palabra:*/
+			/*Si la palabra es HORIZONTAL*/
+			if(wordList.wordList.get(cwords.get(i)).pos == 0) {
+				
+				for(int j=yi; j<yi+length; j++) {
+					if(this.gridv[row][j]!="0" && this.gridv[row][j]!="1") {
+						constrs[j-yi]=this.gridv[row][j].charAt(0);
+					}
+				}
+				
+			}
+			/*Si la palabra es VERTICAL*/
+			else if(wordList.wordList.get(cwords.get(i)).pos == 1) {
+				
+				for(int j=xi; j<xi+length; j++) {
+					if(this.gridv[j][col]!="0" && this.gridv[j][col]!="1") {
+						constrs[j-xi]=this.gridv[j][col].charAt(0);
+					}
+				}
+				
+			}
+			
+			/*Obtenemos el numero de palabras posibles:*/
+			constraints = String.valueOf(constrs);
+			WordBBDD wordddbb = new WordBBDD();
+			WordList gwords = wordddbb.getWords(constraints, this.forbWords.get(i));
+			
+			if(npos > gwords.nwords) {
+				npos = gwords.nwords;
+				index = cwords.get(i);
+			}
+		}
+		
+		return index;
+		
 	}
 	
 	public List<Integer> testWords(WordList wordList) {
