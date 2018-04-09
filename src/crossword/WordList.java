@@ -147,5 +147,21 @@ public class WordList {
 		
 	}
 	
+	public void fillWords() throws IOException{
+		char[] constrs;
+		String constraints;
+		
+		/*Vamos palabra a palabra:*/
+		for(int i=0; i<this.nwords; i++) {
+			constrs = new char[this.wordList.get(i).length];
+			for(int j=0; j<this.wordList.get(i).length; j++) {
+				constrs[j]='_';
+			}
+			constraints = String.valueOf(constrs);
+			WordBBDD wordddbb = new WordBBDD();
+			this.wordList.get(i).setValue(wordddbb.getWord(constraints));
+		}
+	}
+	
 	
 }

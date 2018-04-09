@@ -170,7 +170,7 @@ public class WordBBDD {
 				}
 			}
 			
-			query += "ORDER BY RAND() ";
+			query += "ORDER BY RAND() LIMIT 100 ";
 			
 			/*Preparamos la query:*/
 			PreparedStatement pstmt = connection.prepareStatement(query);
@@ -205,6 +205,51 @@ public class WordBBDD {
 		
 		wordList.nwords=count;
 		return wordList;
+		
+	}
+	
+	public String getWord(String constraints) {
+		
+		String word = new String();
+		
+		/*Conectamos con la BBDD de MySQL:*/
+		String url = "jdbc:mysql://localhost:3306/mydb?useSSL=false";
+		String username = "root";
+		String password = "3St0F4d0.!";
+
+		//System.out.println("Connecting database...");
+		
+		Connection connection;
+		
+		/*Cargamos palabras en la base de datos:*/
+		try {
+			connection = DriverManager.getConnection(url, username, password);
+			String query = "SELECT DISTINCT VALOR FROM DICCIONARIO WHERE VALOR LIKE ? ";
+			query += "ORDER BY RAND() LIMIT 100 ";
+			
+			/*Preparamos la query:*/
+			PreparedStatement pstmt = connection.prepareStatement(query);
+			
+			pstmt.setString(1, constraints);
+			
+			ResultSet rs = pstmt.executeQuery();
+			
+			while (rs.next())
+		    {
+				if(rs.getString("VALOR").length() == constraints.length()) {
+					word = rs.getString("VALOR");
+					break;
+				}
+		    }
+			
+			pstmt.close();
+			connection.close();
+			
+		} catch (SQLException e) {
+		    throw new IllegalStateException("Cannot connect the database!", e);
+		}
+		
+		return word;
 		
 	}
 	

@@ -34,24 +34,188 @@ public class Grid {
 			}
 		}
 		
-		addHoles(this);
+		//addHoles(this);
 		
 		/*Insertamos los huecos donde queremos:*/
-		/*this.gridv[0][4]="0";
-		this.gridv[0][9]="0";
-		this.gridv[1][2]="0";
-		this.gridv[2][4]="0";
-		this.gridv[2][7]="0";
-		this.gridv[3][3]="0";
-		this.gridv[4][5]="0";
-		this.gridv[5][1]="0";
-		this.gridv[5][6]="0";
-		this.gridv[6][3]="0";
-		this.gridv[6][8]="0";
+		
+		this.gridv[0][0]="0";
+		this.gridv[0][4]="0";
+		this.gridv[0][7]="0";
+		this.gridv[1][1]="0";
+		this.gridv[1][7]="0";
+		this.gridv[2][2]="0";
+		this.gridv[2][5]="0";
+		this.gridv[2][6]="0";
+		this.gridv[3][4]="0";
+		this.gridv[4][0]="0";
+		this.gridv[4][1]="0";
+		this.gridv[4][4]="0";
+		this.gridv[4][8]="0";
+		this.gridv[4][9]="0";
+		this.gridv[5][5]="0";
+		this.gridv[6][2]="0";
+		this.gridv[6][7]="0";
 		this.gridv[7][1]="0";
-		this.gridv[7][5]="0";
+		this.gridv[7][7]="0";
+		this.gridv[8][0]="0";
 		this.gridv[8][4]="0";
-		this.gridv[9][7]="0";*/
+		this.gridv[8][8]="0";
+		this.gridv[9][4]="0";
+		this.gridv[9][9]="0";
+		
+		/*this.gridv[0][3]="0";
+		this.gridv[0][8]="0";
+		this.gridv[1][3]="0";
+		this.gridv[1][8]="0";
+		this.gridv[2][8]="0";
+		this.gridv[3][0]="0";
+		this.gridv[3][1]="0";
+		this.gridv[3][5]="0";
+		this.gridv[4][6]="0";
+		this.gridv[4][10]="0";
+		this.gridv[4][11]="0";
+		this.gridv[4][12]="0";
+		this.gridv[5][3]="0";
+		this.gridv[6][4]="0";
+		this.gridv[6][8]="0";
+		this.gridv[7][9]="0";
+		this.gridv[8][0]="0";
+		this.gridv[8][1]="0";
+		this.gridv[8][2]="0";
+		this.gridv[8][6]="0";
+		this.gridv[9][7]="0";
+		this.gridv[9][11]="0";
+		this.gridv[9][12]="0";
+		this.gridv[10][4]="0";
+		this.gridv[11][9]="0";
+		this.gridv[12][4]="0";
+		this.gridv[12][9]="0";*/
+		
+		/*this.gridv[0][0]="0";
+		this.gridv[0][1]="0";
+		this.gridv[0][2]="0";
+		this.gridv[0][3]="0";
+		this.gridv[0][4]="0";
+		this.gridv[0][5]="0";
+		this.gridv[0][7]="0";
+		this.gridv[0][8]="0";
+		this.gridv[0][9]="0";
+		this.gridv[0][10]="0";
+		this.gridv[0][11]="0";
+		this.gridv[0][12]="0";
+		this.gridv[1][0]="0";
+		this.gridv[1][1]="0";
+		this.gridv[1][2]="0";
+		this.gridv[1][3]="0";
+		this.gridv[1][4]="0";
+		this.gridv[1][8]="0";
+		this.gridv[1][9]="0";
+		this.gridv[1][10]="0";
+		this.gridv[1][11]="0";
+		this.gridv[1][12]="0";
+		this.gridv[2][0]="0";
+		this.gridv[2][1]="0";
+		this.gridv[2][2]="0";
+		this.gridv[2][3]="0";
+		this.gridv[2][9]="0";
+		this.gridv[2][10]="0";
+		this.gridv[2][11]="0";
+		this.gridv[2][12]="0";
+		this.gridv[3][0]="0";
+		this.gridv[3][1]="0";
+		this.gridv[3][2]="0";
+		this.gridv[3][10]="0";
+		this.gridv[3][11]="0";
+		this.gridv[3][12]="0";
+		this.gridv[4][0]="0";
+		this.gridv[4][1]="0";
+		this.gridv[4][11]="0";
+		this.gridv[4][12]="0";
+		this.gridv[5][0]="0";
+		this.gridv[5][12]="0";
+		this.gridv[7][0]="0";
+		this.gridv[7][12]="0";
+		this.gridv[8][0]="0";
+		this.gridv[8][1]="0";
+		this.gridv[8][11]="0";
+		this.gridv[8][12]="0";
+		this.gridv[9][0]="0";
+		this.gridv[9][1]="0";
+		this.gridv[9][2]="0";
+		this.gridv[9][10]="0";
+		this.gridv[9][11]="0";
+		this.gridv[9][12]="0";
+		this.gridv[10][0]="0";
+		this.gridv[10][1]="0";
+		this.gridv[10][2]="0";
+		this.gridv[10][3]="0";
+		this.gridv[10][9]="0";
+		this.gridv[10][10]="0";
+		this.gridv[10][11]="0";
+		this.gridv[10][12]="0";
+		this.gridv[11][0]="0";
+		this.gridv[11][1]="0";
+		this.gridv[11][2]="0";
+		this.gridv[11][3]="0";
+		this.gridv[11][4]="0";
+		this.gridv[11][8]="0";
+		this.gridv[11][9]="0";
+		this.gridv[11][10]="0";
+		this.gridv[11][11]="0";
+		this.gridv[11][12]="0";
+		this.gridv[12][0]="0";
+		this.gridv[12][1]="0";
+		this.gridv[12][2]="0";
+		this.gridv[12][3]="0";
+		this.gridv[12][4]="0";
+		this.gridv[12][5]="0";
+		this.gridv[12][7]="0";
+		this.gridv[12][8]="0";
+		this.gridv[12][9]="0";
+		this.gridv[12][10]="0";
+		this.gridv[12][11]="0";
+		this.gridv[12][12]="0";*/
+		
+		/*this.gridv[0][4]="0";
+		this.gridv[0][10]="0";
+		this.gridv[1][4]="0";
+		this.gridv[1][10]="0";
+		this.gridv[2][4]="0";
+		this.gridv[2][10]="0";
+		this.gridv[3][14]="0";
+		this.gridv[4][12]="0";
+		this.gridv[4][13]="0";
+		this.gridv[4][14]="0";
+		this.gridv[5][0]="0";
+		this.gridv[5][1]="0";
+		this.gridv[5][2]="0";
+		this.gridv[5][6]="0";
+		this.gridv[5][7]="0";
+		this.gridv[5][8]="0";
+		this.gridv[5][9]="0";
+		this.gridv[6][3]="0";
+		this.gridv[7][4]="0";
+		this.gridv[7][10]="0";
+		this.gridv[8][11]="0";
+		this.gridv[9][5]="0";
+		this.gridv[9][6]="0";
+		this.gridv[9][7]="0";
+		this.gridv[9][8]="0";
+		this.gridv[9][9]="0";
+		this.gridv[9][12]="0";
+		this.gridv[9][13]="0";
+		this.gridv[9][14]="0";
+		this.gridv[10][0]="0";
+		this.gridv[10][1]="0";
+		this.gridv[10][2]="0";
+		this.gridv[10][9]="0";
+		this.gridv[11][0]="0";
+		this.gridv[12][4]="0";
+		this.gridv[12][10]="0";
+		this.gridv[13][4]="0";
+		this.gridv[13][10]="0";
+		this.gridv[14][4]="0";
+		this.gridv[14][10]="0";*/
 		
 		/*try {
 			this.printGrid(new WordList());
@@ -178,17 +342,34 @@ public class Grid {
 		//Escribimos palabras horizontales:
 		for(int i=0; i<wordList.nwords; i++) {
 			if(wordList.wordList.get(i).pos == 0) {
-				printWriter.printf("Pos(%d,%d)\tLongitud %d\t\t- %s\n",wordList.wordList.get(i).row
+				printWriter.printf("Pos(%d,%d)\tLongitud %d\t\t- %s\t",wordList.wordList.get(i).row
 						,wordList.wordList.get(i).col,wordList.wordList.get(i).length, wordList.wordList.get(i).value);
+			
+				/*Escribimos las palabras prohibidas para cada posicion:*/
+				printWriter.printf("(");
+				for(int j=0; j<this.forbWords.get(i).size(); j++) {
+					printWriter.printf("%s, ", this.forbWords.get(i).get(j));
+				}
+				printWriter.printf(")\n");
+			
 			}
+			
 		}
 		
 		printWriter.print("\nVERTICALES:\n");
 		//Escribimos palabras verticales:
 		for(int i=0; i<this.nwords; i++) {
 			if(wordList.wordList.get(i).pos == 1) {
-				printWriter.printf("Pos(%d,%d)\tLongitud %d\t\t- %s\n",wordList.wordList.get(i).row
+				printWriter.printf("Pos(%d,%d)\tLongitud %d\t\t- %s\t",wordList.wordList.get(i).row
 						,wordList.wordList.get(i).col,wordList.wordList.get(i).length, wordList.wordList.get(i).value);
+			
+				/*Escribimos las palabras prohibidas para cada posicion:*/
+				printWriter.printf("(");
+				for(int j=0; j<this.forbWords.get(i).size(); j++) {
+					printWriter.printf("%s, ", this.forbWords.get(i).get(j));
+				}
+				printWriter.printf(")\n");
+			
 			}
 		}
 		
@@ -465,6 +646,10 @@ public class Grid {
 			
 			if(this.nextWord_v2(wordList, pos_words, i, k) == 0) {
 				wordList.last=i;
+				
+				this.updateGrid(wordList);
+				this.printGrid(wordList);
+				
 				wordsIdx = this.testWords(wordList);
 							
 				/*Contamos el numero de palabras encontradas:*/
@@ -487,7 +672,7 @@ public class Grid {
 			else
 			{
 				wordList.wordList.get(i).found=0;
-				this.forbWords.get(i).add(wordList.wordList.get(i).value);
+				//this.forbWords.get(i).add(wordList.wordList.get(i).value);
 				wordList.wordList.get(i).setValue("");
 				//this.testWords(wordList);
 				this.updateGrid(wordList);
@@ -499,19 +684,23 @@ public class Grid {
 				break;
 			else {
 				wordList.wordList.get(i).found=0;
+				//this.forbWords.get(i).add(wordList.wordList.get(i).value);
 				wordList.wordList.get(i).setValue("");
 				for(int j=0; j<wordsIdx.size(); j++) {
 					wordList.wordList.get(wordsIdx.get(j)).found=0;
+					//this.forbWords.get(wordsIdx.get(j)).add(wordList.wordList.get(wordsIdx.get(j)).value);
 					wordList.wordList.get(wordsIdx.get(j)).setValue("");
-					wordsIdx.clear();
 				}
+				wordsIdx.clear();
+				this.updateGrid(wordList);
+				this.printGrid(wordList);
 			}
 			
 		}
 		
 		if(done != 0)
 		{
-			wordList.wordList.get(i).found=0;
+			//wordList.wordList.get(i).found=0;
 			
 			if(n>=0) {
 				
@@ -522,18 +711,18 @@ public class Grid {
 				}
 				
 				wordList.wordList.get(n).found=0;
-				this.forbWords.get(n).add(wordList.wordList.get(n).value);
+				//this.forbWords.get(n).add(wordList.wordList.get(n).value);
 				wordList.wordList.get(n).setValue("");
 				for(int j=0; j<wordsIdx.size(); j++) {
 					wordList.wordList.get(wordsIdx.get(j)).found=0;
-					this.forbWords.get(wordsIdx.get(j)).add(wordList.wordList.get(wordsIdx.get(j)).value);
+					//this.forbWords.get(wordsIdx.get(j)).add(wordList.wordList.get(wordsIdx.get(j)).value);
 					wordList.wordList.get(wordsIdx.get(j)).setValue("");
-					wordsIdx.clear();
 				}
+				wordsIdx.clear();
 				//System.out.printf("Reconsiderar palabra: %s\n", wordList.wordList.get(n).value);
 				//this.testWords(wordList);
 			}else {
-				wordsIdx.clear();
+				//wordsIdx.clear();
 				//System.out.println("Empezando de nuevo");
 			}
 			
@@ -1012,8 +1201,10 @@ public int getPrevWord(WordList wordList, int last) throws IOException {
 		int cross = 0;
 		
 		/*Comprobamos si es la primera palabra que se va a formar:*/
-		if(last==-1)
-			return 0;
+		if(last==-1) {
+			int index = ThreadLocalRandom.current().nextInt(0, wordList.nwords);
+			return index;
+		}
 		
 		/*for(int i=0; i<wordList.nwords; i++) {
 			if(wordList.wordList.get(i).found==1)
@@ -1108,7 +1299,8 @@ public int getPrevWord(WordList wordList, int last) throws IOException {
 		if(cwords.size() > 0) {
 			//int index = ThreadLocalRandom.current().nextInt(0, cwords.size());
 			int index = selectWord(wordList, cwords);
-			return cwords.get(0).intValue();
+			//return cwords.get(0).intValue();
+			return index;
 		}
 		else {
 			int index = ThreadLocalRandom.current().nextInt(0, ncwords.size());
@@ -1234,6 +1426,13 @@ public int getPrevWord(WordList wordList, int last) throws IOException {
 		int lengthaux = wordList.wordList.get(last).length;
 		int colaux = wordList.wordList.get(last).col;
 		int rowaux = wordList.wordList.get(last).row;
+		
+		System.out.printf("word: %s", wordList.wordList.get(last).getValue());
+		System.out.printf("row: %d", xxi);
+		System.out.printf("col: %d", yyi);
+		System.out.printf("length: %d", lengthaux);
+		
+		
 		/*Si la palabra es HORIZONTAL*/
 		if(wordList.wordList.get(last).pos == 0) {
 			
@@ -1317,7 +1516,7 @@ public int getPrevWord(WordList wordList, int last) throws IOException {
 		
 		int index = 0;
 		
-		int npos = 10^6;
+		int npos = 100000;
 		char[] constrs;
 		String constraints;
 		
@@ -1340,6 +1539,9 @@ public int getPrevWord(WordList wordList, int last) throws IOException {
 					if(this.gridv[row][j]!="0" && this.gridv[row][j]!="1") {
 						constrs[j-yi]=this.gridv[row][j].charAt(0);
 					}
+					else {
+						constrs[j-yi]='_';
+					}
 				}
 				
 			}
@@ -1349,6 +1551,9 @@ public int getPrevWord(WordList wordList, int last) throws IOException {
 				for(int j=xi; j<xi+length; j++) {
 					if(this.gridv[j][col]!="0" && this.gridv[j][col]!="1") {
 						constrs[j-xi]=this.gridv[j][col].charAt(0);
+					}
+					else {
+						constrs[j-xi]='_';
 					}
 				}
 				
@@ -1417,10 +1622,11 @@ public int getPrevWord(WordList wordList, int last) throws IOException {
 					
 				}
 				
-				//System.out.printf("Palabra formada: %s[%d]\n", String.valueOf(constrs), size);
-				//System.out.printf("Tamaño de palabra: %d\n", wordList.wordList.get(i).length);
-				
 				if(size == wordList.wordList.get(i).length) {
+					
+					System.out.printf("Palabra formada: %s[%d]\n", String.valueOf(constrs), size);
+					System.out.printf("Tamaño de palabra: %d\n", wordList.wordList.get(i).length);
+					
 					wordList.wordList.get(i).value = String.valueOf(constrs);
 					wordList.wordList.get(i).found = 1;
 					count++;
