@@ -160,6 +160,8 @@ public class WordList {
 			constraints = String.valueOf(constrs);
 			WordBBDD wordddbb = new WordBBDD();
 			this.wordList.get(i).setValue(wordddbb.getWord(constraints));
+			if(this.wordList.get(i).pos==0)
+				this.wordList.get(i).found=1;
 		}
 	}
 	

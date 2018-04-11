@@ -11,6 +11,11 @@ public class Candidate {
 	public Grid grid;
 	public List<Integer> badWords = new ArrayList<Integer>();
 	
+	public void copy(Candidate cand) {
+		this.wordList = cand.wordList;
+		this.grid = cand.grid;
+	}
+	
 	public WordList getWordList() {
 		return wordList;
 	}
@@ -113,20 +118,20 @@ public class Candidate {
 		String constraints;
 		
 		/*Para cada palabra mala:*/
-		for(int i=0; i<this.badWords.size(); i++) {
+		for(int i=0; i<this.wordList.nwords; i++) {
 			/*Decidimos si cambiamos la palabra:*/
 			if(ThreadLocalRandom.current().nextDouble() > 0.6) {
 				
 				/*System.out.printf("palabra antigua: %s\n", 
 						this.wordList.wordList.get(this.badWords.get(i)).getValue());*/
 				
-				constrs = new char[this.wordList.wordList.get(this.badWords.get(i)).length];
-				for(int j=0; j<this.wordList.wordList.get(this.badWords.get(i)).length; j++) {
+				constrs = new char[this.wordList.wordList.get(i).length];
+				for(int j=0; j<this.wordList.wordList.get(i).length; j++) {
 					constrs[j]='_';
 				}
 				constraints = String.valueOf(constrs);
 				WordBBDD wordddbb = new WordBBDD();
-				this.wordList.wordList.get(this.badWords.get(i)).setValue(wordddbb.getWord(constraints));
+				this.wordList.wordList.get(i).setValue(wordddbb.getWord(constraints));
 				
 				/*System.out.printf("palabra nueva: %s\n", 
 						this.wordList.wordList.get(this.badWords.get(i)).getValue());*/

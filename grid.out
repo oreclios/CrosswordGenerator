@@ -1,95 +1,24 @@
-Crossword of 74 words:
+Crossword of 12 words:
 
-	_ _ _ _ X c _ _ _ _ X p i a n 
-	_ _ _ _ X a _ _ _ _ X _ _ _ o 
-	_ _ _ _ X b e n i n X _ _ _ a 
-	_ _ _ _ r i _ _ _ _ _ _ _ _ X 
-	_ _ _ _ o l _ _ _ _ _ _ X X X 
-	X X X l s d X X X X _ _ _ _ _ 
-	v e r X a e r o n a u t i c o 
-	e r i c X r a b o s X _ _ _ _ 
-	e n g o l o s i n a r X _ _ _ 
-	r e a t a X X X X X u f X X X 
-	X X X i _ _ _ _ _ X a l e a r 
-	X m a l a v e n t u r a n z a 
-	_ _ _ l X _ _ _ _ _ X n e i s 
-	_ _ _ o X _ _ _ _ _ X c a m a 
-	_ _ _ n X _ _ _ _ _ X o l o r 
+	a s i l a r 
+	g u a i r a 
+	z u r e a r 
+	r a m b l a 
+	z a f a r i 
+	j u e r g a 
 
 HORIZONTALES:
-Pos(0,0)	Longitud 4		- 	()
-Pos(0,5)	Longitud 5		- 	()
-Pos(0,11)	Longitud 4		- pian	()
-Pos(1,0)	Longitud 4		- 	()
-Pos(1,5)	Longitud 5		- 	()
-Pos(1,11)	Longitud 4		- 	()
-Pos(2,0)	Longitud 4		- 	()
-Pos(2,5)	Longitud 5		- benin	()
-Pos(2,11)	Longitud 4		- 	()
-Pos(3,0)	Longitud 14		- 	()
-Pos(4,0)	Longitud 12		- 	()
-Pos(5,3)	Longitud 3		- lsd	()
-Pos(5,10)	Longitud 5		- 	()
-Pos(6,0)	Longitud 3		- ver	()
-Pos(6,4)	Longitud 11		- aeronautico	()
-Pos(7,0)	Longitud 4		- eric	()
-Pos(7,5)	Longitud 5		- rabos	()
-Pos(7,11)	Longitud 4		- 	()
-Pos(8,0)	Longitud 11		- engolosinar	()
-Pos(8,12)	Longitud 3		- 	()
-Pos(9,0)	Longitud 5		- reata	()
-Pos(9,10)	Longitud 2		- uf	()
-Pos(10,3)	Longitud 6		- 	()
-Pos(10,10)	Longitud 5		- alear	()
-Pos(11,1)	Longitud 14		- malaventuranza	()
-Pos(12,0)	Longitud 4		- 	()
-Pos(12,5)	Longitud 5		- 	()
-Pos(12,11)	Longitud 4		- neis	()
-Pos(13,0)	Longitud 4		- 	()
-Pos(13,5)	Longitud 5		- 	()
-Pos(13,11)	Longitud 4		- cama	()
-Pos(14,0)	Longitud 4		- 	()
-Pos(14,5)	Longitud 5		- 	()
-Pos(14,11)	Longitud 4		- olor	()
+Pos(0,0)	Longitud 6		- asilar	()
+Pos(1,0)	Longitud 6		- guaira	()
+Pos(2,0)	Longitud 6		- zurear	()
+Pos(3,0)	Longitud 6		- rambla	()
+Pos(4,0)	Longitud 6		- zafari	()
+Pos(5,0)	Longitud 6		- juerga	()
 
 VERTICALES:
-Pos(0,0)	Longitud 5		- 	()
-Pos(6,0)	Longitud 4		- veer	()
-Pos(12,0)	Longitud 3		- 	()
-Pos(0,1)	Longitud 5		- 	()
-Pos(6,1)	Longitud 4		- erne	()
-Pos(11,1)	Longitud 4		- 	()
-Pos(0,2)	Longitud 5		- 	()
-Pos(6,2)	Longitud 4		- riga	()
-Pos(11,2)	Longitud 4		- 	()
-Pos(0,3)	Longitud 6		- 	()
-Pos(7,3)	Longitud 8		- cotillon	()
-Pos(3,4)	Longitud 4		- rosa	()
-Pos(8,4)	Longitud 4		- 	()
-Pos(0,5)	Longitud 9		- cabildero	()
-Pos(10,5)	Longitud 5		- 	()
-Pos(0,6)	Longitud 5		- 	()
-Pos(6,6)	Longitud 3		- ras	()
-Pos(10,6)	Longitud 5		- 	()
-Pos(0,7)	Longitud 5		- 	()
-Pos(6,7)	Longitud 3		- obi	()
-Pos(10,7)	Longitud 5		- 	()
-Pos(0,8)	Longitud 5		- 	()
-Pos(6,8)	Longitud 3		- non	()
-Pos(10,8)	Longitud 5		- 	()
-Pos(0,9)	Longitud 5		- 	()
-Pos(6,9)	Longitud 3		- asa	()
-Pos(11,9)	Longitud 4		- 	()
-Pos(3,10)	Longitud 4		- 	()
-Pos(8,10)	Longitud 4		- ruar	()
-Pos(0,11)	Longitud 8		- 	()
-Pos(9,11)	Longitud 6		- flanco	()
-Pos(0,12)	Longitud 4		- 	()
-Pos(5,12)	Longitud 4		- 	()
-Pos(10,12)	Longitud 5		- eneal	()
-Pos(0,13)	Longitud 4		- 	()
-Pos(5,13)	Longitud 4		- 	()
-Pos(10,13)	Longitud 5		- azimo	()
-Pos(0,14)	Longitud 3		- noa	()
-Pos(5,14)	Longitud 4		- 	()
-Pos(10,14)	Longitud 5		- rasar	()
+Pos(0,0)	Longitud 6		- trosas	()
+Pos(0,1)	Longitud 6		- andada	()
+Pos(0,2)	Longitud 6		- cimero	()
+Pos(0,3)	Longitud 6		- aterio	()
+Pos(0,4)	Longitud 6		- tasugo	()
+Pos(0,5)	Longitud 6		- lampar	()

@@ -34,189 +34,10 @@ public class Grid {
 			}
 		}
 		
-		//addHoles(this);
+		addHoles(this);
 		
 		/*Insertamos los huecos donde queremos:*/
-		
-		this.gridv[0][0]="0";
-		this.gridv[0][4]="0";
-		this.gridv[0][7]="0";
-		this.gridv[1][1]="0";
-		this.gridv[1][7]="0";
-		this.gridv[2][2]="0";
-		this.gridv[2][5]="0";
-		this.gridv[2][6]="0";
-		this.gridv[3][4]="0";
-		this.gridv[4][0]="0";
-		this.gridv[4][1]="0";
-		this.gridv[4][4]="0";
-		this.gridv[4][8]="0";
-		this.gridv[4][9]="0";
-		this.gridv[5][5]="0";
-		this.gridv[6][2]="0";
-		this.gridv[6][7]="0";
-		this.gridv[7][1]="0";
-		this.gridv[7][7]="0";
-		this.gridv[8][0]="0";
-		this.gridv[8][4]="0";
-		this.gridv[8][8]="0";
-		this.gridv[9][4]="0";
-		this.gridv[9][9]="0";
-		
-		/*this.gridv[0][3]="0";
-		this.gridv[0][8]="0";
-		this.gridv[1][3]="0";
-		this.gridv[1][8]="0";
-		this.gridv[2][8]="0";
-		this.gridv[3][0]="0";
-		this.gridv[3][1]="0";
-		this.gridv[3][5]="0";
-		this.gridv[4][6]="0";
-		this.gridv[4][10]="0";
-		this.gridv[4][11]="0";
-		this.gridv[4][12]="0";
-		this.gridv[5][3]="0";
-		this.gridv[6][4]="0";
-		this.gridv[6][8]="0";
-		this.gridv[7][9]="0";
-		this.gridv[8][0]="0";
-		this.gridv[8][1]="0";
-		this.gridv[8][2]="0";
-		this.gridv[8][6]="0";
-		this.gridv[9][7]="0";
-		this.gridv[9][11]="0";
-		this.gridv[9][12]="0";
-		this.gridv[10][4]="0";
-		this.gridv[11][9]="0";
-		this.gridv[12][4]="0";
-		this.gridv[12][9]="0";*/
-		
-		/*this.gridv[0][0]="0";
-		this.gridv[0][1]="0";
-		this.gridv[0][2]="0";
-		this.gridv[0][3]="0";
-		this.gridv[0][4]="0";
-		this.gridv[0][5]="0";
-		this.gridv[0][7]="0";
-		this.gridv[0][8]="0";
-		this.gridv[0][9]="0";
-		this.gridv[0][10]="0";
-		this.gridv[0][11]="0";
-		this.gridv[0][12]="0";
-		this.gridv[1][0]="0";
-		this.gridv[1][1]="0";
-		this.gridv[1][2]="0";
-		this.gridv[1][3]="0";
-		this.gridv[1][4]="0";
-		this.gridv[1][8]="0";
-		this.gridv[1][9]="0";
-		this.gridv[1][10]="0";
-		this.gridv[1][11]="0";
-		this.gridv[1][12]="0";
-		this.gridv[2][0]="0";
-		this.gridv[2][1]="0";
-		this.gridv[2][2]="0";
-		this.gridv[2][3]="0";
-		this.gridv[2][9]="0";
-		this.gridv[2][10]="0";
-		this.gridv[2][11]="0";
-		this.gridv[2][12]="0";
-		this.gridv[3][0]="0";
-		this.gridv[3][1]="0";
-		this.gridv[3][2]="0";
-		this.gridv[3][10]="0";
-		this.gridv[3][11]="0";
-		this.gridv[3][12]="0";
-		this.gridv[4][0]="0";
-		this.gridv[4][1]="0";
-		this.gridv[4][11]="0";
-		this.gridv[4][12]="0";
-		this.gridv[5][0]="0";
-		this.gridv[5][12]="0";
-		this.gridv[7][0]="0";
-		this.gridv[7][12]="0";
-		this.gridv[8][0]="0";
-		this.gridv[8][1]="0";
-		this.gridv[8][11]="0";
-		this.gridv[8][12]="0";
-		this.gridv[9][0]="0";
-		this.gridv[9][1]="0";
-		this.gridv[9][2]="0";
-		this.gridv[9][10]="0";
-		this.gridv[9][11]="0";
-		this.gridv[9][12]="0";
-		this.gridv[10][0]="0";
-		this.gridv[10][1]="0";
-		this.gridv[10][2]="0";
-		this.gridv[10][3]="0";
-		this.gridv[10][9]="0";
-		this.gridv[10][10]="0";
-		this.gridv[10][11]="0";
-		this.gridv[10][12]="0";
-		this.gridv[11][0]="0";
-		this.gridv[11][1]="0";
-		this.gridv[11][2]="0";
-		this.gridv[11][3]="0";
-		this.gridv[11][4]="0";
-		this.gridv[11][8]="0";
-		this.gridv[11][9]="0";
-		this.gridv[11][10]="0";
-		this.gridv[11][11]="0";
-		this.gridv[11][12]="0";
-		this.gridv[12][0]="0";
-		this.gridv[12][1]="0";
-		this.gridv[12][2]="0";
-		this.gridv[12][3]="0";
-		this.gridv[12][4]="0";
-		this.gridv[12][5]="0";
-		this.gridv[12][7]="0";
-		this.gridv[12][8]="0";
-		this.gridv[12][9]="0";
-		this.gridv[12][10]="0";
-		this.gridv[12][11]="0";
-		this.gridv[12][12]="0";*/
-		
-		/*this.gridv[0][4]="0";
-		this.gridv[0][10]="0";
-		this.gridv[1][4]="0";
-		this.gridv[1][10]="0";
-		this.gridv[2][4]="0";
-		this.gridv[2][10]="0";
-		this.gridv[3][14]="0";
-		this.gridv[4][12]="0";
-		this.gridv[4][13]="0";
-		this.gridv[4][14]="0";
-		this.gridv[5][0]="0";
-		this.gridv[5][1]="0";
-		this.gridv[5][2]="0";
-		this.gridv[5][6]="0";
-		this.gridv[5][7]="0";
-		this.gridv[5][8]="0";
-		this.gridv[5][9]="0";
-		this.gridv[6][3]="0";
-		this.gridv[7][4]="0";
-		this.gridv[7][10]="0";
-		this.gridv[8][11]="0";
-		this.gridv[9][5]="0";
-		this.gridv[9][6]="0";
-		this.gridv[9][7]="0";
-		this.gridv[9][8]="0";
-		this.gridv[9][9]="0";
-		this.gridv[9][12]="0";
-		this.gridv[9][13]="0";
-		this.gridv[9][14]="0";
-		this.gridv[10][0]="0";
-		this.gridv[10][1]="0";
-		this.gridv[10][2]="0";
-		this.gridv[10][9]="0";
-		this.gridv[11][0]="0";
-		this.gridv[12][4]="0";
-		this.gridv[12][10]="0";
-		this.gridv[13][4]="0";
-		this.gridv[13][10]="0";
-		this.gridv[14][4]="0";
-		this.gridv[14][10]="0";*/
-		
+				
 		/*try {
 			this.printGrid(new WordList());
 		} catch (IOException e) {
@@ -234,28 +55,16 @@ public class Grid {
 	
 	private void addHoles(Grid grid) {
 		
-		int done;
+		Pattern patt = new Pattern(this.nrows, this.ncols);
+		patt.setPattern5();
 		
-		/*Determinamos numero de huecos*/
-		int perct = ThreadLocalRandom.current().nextInt(15, 25);
-		int nHoles = (int)((grid.nrows*grid.ncols)*0.01*perct);
-		grid.nholes = nHoles;
-		
-		//System.out.printf("Numero de huecos: %d\n", nHoles);
-		
-		for(int i=0; i<nHoles; i++)
-		{
-			done=0;
-			do {
-				int x = ThreadLocalRandom.current().nextInt(0, grid.nrows);
-				int y = ThreadLocalRandom.current().nextInt(0, grid.ncols);
-				
-				if(grid.gridv[x][y]!="0") {
-					grid.gridv[x][y]="0";
-					done=1;
-				}
-			}while(done==0);
+		for(int i=0; i<this.nrows; i++) {
+			for(int j=0; j<this.ncols; j++) {
+				if(patt.gridv[i][j]=="0")
+					this.gridv[i][j]="0";
+			}
 		}
+		
 	}
 	
 	private int countWords(Grid grid) {

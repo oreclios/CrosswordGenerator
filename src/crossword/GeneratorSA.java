@@ -11,7 +11,7 @@ public class GeneratorSA {
 		Double energyS;
 		Double T;
 		Double Pqs;
-		Grid grid = new Grid(10,10);
+		Grid grid = new Grid(6,6);
 		
 		/*Establecemos la solución inicial:*/
 		Candidate solv = new Candidate();
@@ -28,12 +28,24 @@ public class GeneratorSA {
 		energyQ=T;
 		System.out.printf("Energía inicial: %e\n", T);
 		
+		solv.grid.updateGrid(solv.wordList);
+		solv.grid.printGrid(solv.wordList);
+		
+		/*for(int i=0; i<solv.wordList.nwords; i++) {
+			System.out.printf("Palabra %d: %s\n", i, solv.wordList.wordList.get(i).getValue());
+		}*/
+		
 		while(T > 0) {
 			
 			for(int i=0; i<100; i++) {
 				
 				/*perturb candidate:*/
-				solvn = solv;
+				solvn.copy(solv);
+				
+				/*for(int j=0; j<solvn.wordList.nwords; j++) {
+					System.out.printf("Palabra %d: %s\n", j, solvn.wordList.wordList.get(j).getValue());
+				}*/
+				
 				solvn.perturb();
 				
 				/*Evaluate the new state:*/
@@ -48,11 +60,14 @@ public class GeneratorSA {
 				System.out.printf("Probabilidad de cambio: %e\n", Pqs);
 				
 				if(ThreadLocalRandom.current().nextDouble() >= Pqs) {
-					solv=solvn;
+					solv.copy(solvn);
 					T=solv.getFitness();
 				}
 				
 				System.out.printf("Energía: %e\n", T);
+				
+				solv.grid.updateGrid(solv.wordList);
+				solv.grid.printGrid(solv.wordList);
 				
 			}
 		}

@@ -6,7 +6,7 @@ public class Generator {
 	
 	public static void main(String[] args) {
 		
-		Grid grid = new Grid(15,15);
+		Grid grid = new Grid(6,6);
 		
 		int done = 1;
 		

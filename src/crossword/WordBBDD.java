@@ -237,7 +237,8 @@ public class WordBBDD {
 			while (rs.next())
 		    {
 				if(rs.getString("VALOR").length() == constraints.length()) {
-					word = rs.getString("VALOR");
+					word = Normalizer.normalize(rs.getString("VALOR"), Normalizer.Form.NFD)
+							.replaceAll("[^\\p{ASCII}]", "");
 					break;
 				}
 		    }
